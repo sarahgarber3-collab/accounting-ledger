@@ -62,12 +62,14 @@ public class LedgerApp {
     public static void ledgerScreen(Scanner scanner) {
 
 
+        boolean run = true;
         while (true) {
             System.out.println("Select from the following options: ");
             System.out.println("\tA) All-Display all entries");
-            System.out.println("\tD) Deposits- Display only the entries that are deposits into the account");
-            System.out.println("\tP) Payments-Display only the negative entries(or payments)");
-            System.out.println("\tR) Reports ");
+            System.out.println("\tD) Deposits- Display only the entries that are deposits into the account.");
+            System.out.println("\tP) Payments-Display only the negative entries(or payments). ");
+            System.out.println("\tR) Reports. ");
+            System.out.println("\tH) Home - go back to the home page.");
             System.out.print("Enter your selection: ");
             String userOption = scanner.nextLine().toUpperCase();
 
@@ -87,6 +89,9 @@ public class LedgerApp {
                 case "R":
                     reportScreen(scanner);
                     break;
+                case "H":
+                    run = false;
+                    break;
 
                 default:
                     System.out.println("incorrect option entered");
@@ -99,6 +104,7 @@ public class LedgerApp {
     public static void reportScreen(Scanner scanner) {
 
 
+        boolean run = true;
         while (true) {
             System.out.println("Select from the following options: ");
             System.out.println("\t1) Month to Date");
@@ -133,7 +139,7 @@ public class LedgerApp {
                     formatSpaces();
                     break;
                 case 0:
-                    //go back to ledger page
+                    run = false;
                     break;
                 default:
                     System.out.println("incorrect option entered");
@@ -143,4 +149,5 @@ public class LedgerApp {
             }
         }
     }
+
 }
