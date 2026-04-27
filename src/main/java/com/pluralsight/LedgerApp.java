@@ -32,11 +32,25 @@ public class LedgerApp {
 
             switch (userOption) {
                 case "D":
-                    //addDeposit
+                    System.out.print("What is the deposit for?: ");
+                    String userReason = scanner.nextLine();
+                    System.out.print("Who is it from?: ");
+                    String userFrom = scanner.nextLine();
+                    System.out.println("How much is it?: ");
+                    Double userAmount = scanner.nextDouble();
+                    TransactionApp deposit = new TransactionApp(LocalDate.now(), LocalTime.now(),userReason,userFrom,userAmount);
+                    saveTransaction(deposit);
                     formatSpaces();
                     break;
                 case "P":
-                    //makePayment
+                    System.out.print("What is the Payment for?: ");
+                    String userR = scanner.nextLine();
+                    System.out.print("Who is it for?: ");
+                    String userF = scanner.nextLine();
+                    System.out.println("How much was it?: ");
+                    Double userA = scanner.nextDouble();
+                    TransactionApp payment = new TransactionApp(LocalDate.now(), LocalTime.now(),userR,userF,-userA);
+                    saveTransaction(payment);
                     formatSpaces();
                     break;
                 case "L":
@@ -183,9 +197,9 @@ public class LedgerApp {
     }
     public static void saveTransaction(TransactionApp transaction) {
         try {
-            BufferedWriter bufWriter = new BufferedWriter(new FileWriter("transactions.csv", true));
-            bufWriter.write(transaction.formatCSV());
+            BufferedWriter bufWriter = new BufferedWriter(new FileWriter("src/main/resources/transactions.csv", true));
             bufWriter.newLine();
+            bufWriter.write(transaction.formatCSV());
             bufWriter.close();
 
             } catch (IOException e) {
