@@ -1,9 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -183,6 +180,18 @@ public class LedgerApp {
             e.printStackTrace();
         }
         return transaction;
+    }
+    public static void saveTransaction(TransactionApp transaction) {
+        try {
+            BufferedWriter bufWriter = new BufferedWriter(new FileWriter("transactions.csv", true));
+            bufWriter.write(transaction.formatCSV());
+            bufWriter.newLine();
+            bufWriter.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+
+        }
     }
 
 }
