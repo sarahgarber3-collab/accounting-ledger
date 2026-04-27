@@ -63,7 +63,7 @@ public class LedgerApp {
 
 
         boolean run = true;
-        while (true) {
+        while (run) {
             System.out.println("Select from the following options: ");
             System.out.println("\tA) All-Display all entries");
             System.out.println("\tD) Deposits- Display only the entries that are deposits into the account.");
@@ -105,7 +105,7 @@ public class LedgerApp {
 
 
         boolean run = true;
-        while (true) {
+        while (run) {
             System.out.println("Select from the following options: ");
             System.out.println("\t1) Month to Date");
             System.out.println("\t2) Previous Month");
