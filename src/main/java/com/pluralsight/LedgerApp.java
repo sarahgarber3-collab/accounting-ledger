@@ -38,6 +38,7 @@ public class LedgerApp {
                     String userFrom = scanner.nextLine();
                     System.out.println("How much is it?: ");
                     Double userAmount = scanner.nextDouble();
+                    //
                     TransactionApp deposit = new TransactionApp(LocalDate.now(), LocalTime.now(),userReason,userFrom,userAmount);
                     saveTransaction(deposit);
                     formatSpaces();
@@ -49,6 +50,7 @@ public class LedgerApp {
                     String userF = scanner.nextLine();
                     System.out.println("How much was it?: ");
                     Double userA = scanner.nextDouble();
+                    //
                     TransactionApp payment = new TransactionApp(LocalDate.now(), LocalTime.now(),userR,userF,-userA);
                     saveTransaction(payment);
                     formatSpaces();
@@ -78,6 +80,7 @@ public class LedgerApp {
     }
 
     public static void ledgerScreen(Scanner scanner) {
+        ArrayList<TransactionApp> transaction = loadTransaction();
 
 
         boolean run = true;
@@ -93,7 +96,9 @@ public class LedgerApp {
 
             switch (userOption) {
                 case "A":
-                    //DisplayEntries
+                    for (TransactionApp t: transaction ) {
+                        System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(),t.getDate(),t.getDescription(),t.getVendor(),t.getAmount());
+                    }
                     formatSpaces();
                     break;
                 case "D":
