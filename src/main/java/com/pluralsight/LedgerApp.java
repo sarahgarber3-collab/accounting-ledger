@@ -118,7 +118,7 @@ public class LedgerApp {
                     formatSpaces();
                     break;
                 case "R":
-                    reportScreen(scanner);
+                    reportScreen(scanner, transaction);
                     break;
                 case "H":
                     run = false;
@@ -132,7 +132,7 @@ public class LedgerApp {
             }
         }
     }
-    public static void reportScreen(Scanner scanner) {
+    public static void reportScreen(Scanner scanner,ArrayList<TransactionApp> transaction ) {
 
 
         boolean run = true;
@@ -150,23 +150,45 @@ public class LedgerApp {
 
             switch (userOption) {
                 case 1:
-                    //Month to Date
+                    for (TransactionApp t: transaction ) {
+                        if (t.getDate().getMonth()==LocalDate.now().getMonth() && t.getDate().getYear()==LocalDate.now().getYear()) {
+                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                        }
+                    }
                     formatSpaces();
                     break;
                 case 2:
-                    //Previous month
+                    for (TransactionApp t: transaction ) {
+                        if (t.getDate().getMonth()==LocalDate.now().minusMonths(1).getMonth() && t.getDate().getYear()==LocalDate.now().getYear()) {
+                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                        }
+                    }
                     formatSpaces();
                     break;
                 case 3:
-                    //year to dat
+                    for (TransactionApp t: transaction ) {
+                        if (t.getDate().getYear()==LocalDate.now().getYear()) {
+                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                        }
+                    }
                     formatSpaces();
                     break;
                 case 4:
-                    //previous year
+                    for (TransactionApp t: transaction ) {
+                        if (t.getDate().getYear()==LocalDate.now().minusYears(1).getYear()) {
+                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                        }
+                    }
                     formatSpaces();
                     break;
                 case 5:
-                    //Search by vendor
+                    System.out.print("What vendor are you looking for today?: ");
+                    String vendor = scanner.nextLine();
+                    for (TransactionApp t: transaction ) {
+                        if (t.getVendor().toLowerCase().contains(vendor.toLowerCase())) {
+                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                        }
+                    }
                     formatSpaces();
                     break;
                 case 0:
