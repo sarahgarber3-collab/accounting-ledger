@@ -102,11 +102,19 @@ public class LedgerApp {
                     formatSpaces();
                     break;
                 case "D":
-                    //Deposits
+                    for (TransactionApp t: transaction ) {
+                        if(t.getAmount() > 0){
+                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(),t.getDate(),t.getDescription(),t.getVendor(),t.getAmount());
+                        }
+                    }
                     formatSpaces();
                     break;
                 case "P":
-                    //Payments
+                    for (TransactionApp t: transaction ) {
+                        if (t.getAmount() < 0) {
+                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                        }
+                    }
                     formatSpaces();
                     break;
                 case "R":
