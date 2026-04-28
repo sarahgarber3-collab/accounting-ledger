@@ -36,9 +36,9 @@ public class LedgerApp {
                     String userReason = scanner.nextLine();
                     System.out.print("Who is it from?: ");
                     String userFrom = scanner.nextLine();
-                    System.out.println("How much is it?: ");
-                    Double userAmount = scanner.nextDouble();
-                    //
+                    System.out.print("How much is it?: ");
+                    double userAmount = scanner.nextDouble();
+                    scanner.nextLine();
                     TransactionApp deposit = new TransactionApp(LocalDate.now(), LocalTime.now(),userReason,userFrom,userAmount);
                     saveTransaction(deposit);
                     formatSpaces();
@@ -48,9 +48,9 @@ public class LedgerApp {
                     String userR = scanner.nextLine();
                     System.out.print("Who is it for?: ");
                     String userF = scanner.nextLine();
-                    System.out.println("How much was it?: ");
-                    Double userA = scanner.nextDouble();
-                    //
+                    System.out.print("How much was it?: ");
+                    double userA = scanner.nextDouble();
+                    scanner.nextLine();
                     TransactionApp payment = new TransactionApp(LocalDate.now(), LocalTime.now(),userR,userF,-userA);
                     saveTransaction(payment);
                     formatSpaces();
@@ -97,14 +97,14 @@ public class LedgerApp {
             switch (userOption) {
                 case "A":
                     for (TransactionApp t: transaction ) {
-                        System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(),t.getDate(),t.getDescription(),t.getVendor(),t.getAmount());
+                        t.printTransaction();
                     }
                     formatSpaces();
                     break;
                 case "D":
                     for (TransactionApp t: transaction ) {
                         if(t.getAmount() > 0){
-                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(),t.getDate(),t.getDescription(),t.getVendor(),t.getAmount());
+                            t.printTransaction();
                         }
                     }
                     formatSpaces();
@@ -112,7 +112,7 @@ public class LedgerApp {
                 case "P":
                     for (TransactionApp t: transaction ) {
                         if (t.getAmount() < 0) {
-                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                            t.printTransaction();
                         }
                     }
                     formatSpaces();
@@ -152,7 +152,7 @@ public class LedgerApp {
                 case 1:
                     for (TransactionApp t: transaction ) {
                         if (t.getDate().getMonth()==LocalDate.now().getMonth() && t.getDate().getYear()==LocalDate.now().getYear()) {
-                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                            t.printTransaction();
                         }
                     }
                     formatSpaces();
@@ -160,7 +160,7 @@ public class LedgerApp {
                 case 2:
                     for (TransactionApp t: transaction ) {
                         if (t.getDate().getMonth()==LocalDate.now().minusMonths(1).getMonth() && t.getDate().getYear()==LocalDate.now().getYear()) {
-                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                            t.printTransaction();
                         }
                     }
                     formatSpaces();
@@ -168,7 +168,7 @@ public class LedgerApp {
                 case 3:
                     for (TransactionApp t: transaction ) {
                         if (t.getDate().getYear()==LocalDate.now().getYear()) {
-                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                            t.printTransaction();
                         }
                     }
                     formatSpaces();
@@ -176,7 +176,7 @@ public class LedgerApp {
                 case 4:
                     for (TransactionApp t: transaction ) {
                         if (t.getDate().getYear()==LocalDate.now().minusYears(1).getYear()) {
-                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                            t.printTransaction();
                         }
                     }
                     formatSpaces();
@@ -186,7 +186,7 @@ public class LedgerApp {
                     String vendor = scanner.nextLine();
                     for (TransactionApp t: transaction ) {
                         if (t.getVendor().toLowerCase().contains(vendor.toLowerCase())) {
-                            System.out.printf("%s| %s| %s| %s| %f.2%n", t.getTime(), t.getDate(), t.getDescription(), t.getVendor(), t.getAmount());
+                            t.printTransaction();
                         }
                     }
                     formatSpaces();
