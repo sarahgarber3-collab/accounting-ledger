@@ -50,6 +50,6 @@ public class TransactionApp {
         String amountFormatted = moneyFormatter.format(this.amount);
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         String timeFormatted = timeFormatter.format(this.time);
-        System.out.printf("%s| %s| %s| %s| %s%n", timeFormatted, this.date, this.description, this.vendor, amountFormatted);
+        System.out.printf("%s| %s| %s| %s| %s%n", this.date, timeFormatted, this.description, this.vendor, amountFormatted);
     }
 }

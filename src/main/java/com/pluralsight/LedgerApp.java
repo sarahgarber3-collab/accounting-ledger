@@ -161,7 +161,7 @@ public class LedgerApp {
                     break;
                 case 2:
                     for (TransactionApp t: transaction ) {
-                        if (t.getDate().getMonth()==LocalDate.now().minusMonths(1).getMonth() && t.getDate().getYear()==LocalDate.now().getYear()) {
+                        if (t.getDate().getMonth()==LocalDate.now().minusMonths(1).getMonth() && t.getDate().getYear()==LocalDate.now().minusMonths(1).getYear()) {
                             t.printTransaction();
                         }
                     }
