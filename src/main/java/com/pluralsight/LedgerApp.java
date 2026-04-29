@@ -12,7 +12,9 @@ public class LedgerApp {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the accounting ledger!");
+        System.out.println("\uD83D\uDCB0Welcome to the accounting ledger!\uD83D\uDCB0");
+
+
 
         homeScreen(scanner);
 
@@ -25,7 +27,7 @@ public class LedgerApp {
         while (true) {
             System.out.println("Select from the following options: ");
             System.out.println("\tD) Add Deposit");
-            System.out.println("\tP) Make Payment(Debit)");
+            System.out.println("\tP) Make A Payment(Debit)");
             System.out.println("\tL) Ledger");
             System.out.println("\tX) Exit The Application");
             System.out.print("Enter your selection: ");
@@ -58,7 +60,6 @@ public class LedgerApp {
                     break;
                 case "L":
                     ledgerScreen(scanner);
-                    formatSpaces();
                     break;
                 case "X":
                     System.out.println("Thanks for using the accounting ledger, Have a nice day!");

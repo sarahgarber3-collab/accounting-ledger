@@ -11,6 +11,7 @@ public class TransactionApp {
     private String description, vendor;
     private double amount;
 
+
     public TransactionApp(LocalDate date, LocalTime time, String description, String vendor, Double amount) {
         this.date = date;
         this.time = time;
