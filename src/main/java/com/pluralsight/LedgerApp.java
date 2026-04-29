@@ -187,7 +187,7 @@ public class LedgerApp {
                     System.out.print("What vendor are you looking for today?: ");
                     String vendor = scanner.nextLine();
                     for (TransactionApp t: transaction ) {
-                        if (t.getVendor().toLowerCase().contains(vendor.toLowerCase())) {
+                        if (t.getVendor().equalsIgnoreCase(vendor)) {
                             t.printTransaction();
                         }
                     }
