@@ -12,7 +12,10 @@ public class LedgerApp {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("\uD83D\uDCB0Welcome to the accounting ledger!\uD83D\uDCB0");
+        System.out.println("\uD83D\uDCB0Welcome to The Cinema Accounting Ledger!\uD83D\uDCB0");
+        System.out.println("random movie quotes may appear.\uD83C\uDFA5\uD83C\uDF7F");
+        System.out.println("Guess where the quote came from to test your cinema knowledge\uD83C\uDFAC\uD83C\uDFC6");
+        formatSpaces();
 
 
 
@@ -30,7 +33,7 @@ public class LedgerApp {
             System.out.println("\tP) Make A Payment(Debit)");
             System.out.println("\tL) Ledger");
             System.out.println("\tX) Exit The Application");
-            System.out.print("Enter your selection: ");
+            System.out.print("Enter your selection by the matching letter: ");
             String userOption = scanner.nextLine().toUpperCase();
 
             switch (userOption) {
@@ -62,11 +65,12 @@ public class LedgerApp {
                     ledgerScreen(scanner);
                     break;
                 case "X":
-                    System.out.println("Thanks for using the accounting ledger, Have a nice day!");
+                    System.out.println("Thanks for using The Cinema Accounting Ledger, Have a nice day!");
+                    System.out.println("May the force be with you.\uD83D\uDEF8\uD83C\uDF20");
                     scanner.close();
                     System.exit(0);
                 default:
-                    System.out.println("incorrect option entered, press enter to continue.");
+                    System.out.println("Houston, we have a problem. \uD83D\uDC68\u200D\uD83D\uDE80 press enter to try again. \uD83D\uDE0E");
                     scanner.nextLine();
                     formatSpaces();
 
@@ -93,7 +97,7 @@ public class LedgerApp {
             System.out.println("\tP) Payments-Display only the negative entries(or payments). ");
             System.out.println("\tR) Reports. ");
             System.out.println("\tH) Home - go back to the home page.");
-            System.out.print("Enter your selection: ");
+            System.out.print("Enter your selection by the matching letter: ");
             String userOption = scanner.nextLine().toUpperCase();
 
             switch (userOption) {
@@ -128,7 +132,7 @@ public class LedgerApp {
                     break;
 
                 default:
-                    System.out.println("incorrect option entered");
+                    System.out.println("Toto, I've a feeling we're not in Kansan anymore.\uD83D\uDC36\uD83D\uDC60\uD83C\uDF2A\uFE0F press enter to try again.");
                     scanner.nextLine();
                     formatSpaces();
 
@@ -147,7 +151,7 @@ public class LedgerApp {
             System.out.println("\t4) Previous Year");
             System.out.println("\t5) Search by Vendor ");
             System.out.println("\t0) Back - go back to the ledger page.");
-            System.out.print("Enter your selection: ");
+            System.out.print("Enter your selection by the matching number: ");
             int userOption = scanner.nextInt();
             scanner.nextLine();
 
@@ -198,7 +202,7 @@ public class LedgerApp {
                     run = false;
                     break;
                 default:
-                    System.out.println("incorrect option entered");
+                    System.out.println("You can't sit with us.\uD83D\uDC85\uD83D\uDC6F press enter to try again.");
                     scanner.nextLine();
                     formatSpaces();
 
