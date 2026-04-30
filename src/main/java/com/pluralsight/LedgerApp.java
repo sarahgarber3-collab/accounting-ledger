@@ -25,7 +25,7 @@ public class LedgerApp {
 
 
         while (true) {
-            System.out.println("Select from the following options: ");
+            System.out.println("Select from the following options:");
             System.out.println("\tD) Add Deposit");
             System.out.println("\tP) Make A Payment(Debit)");
             System.out.println("\tL) Ledger");
@@ -35,11 +35,11 @@ public class LedgerApp {
 
             switch (userOption) {
                 case "D":
-                    System.out.print("What is the deposit for?: ");
+                    System.out.print("Give a brief description of what the deposit is for?: ");
                     String userReason = scanner.nextLine();
-                    System.out.print("Who is it from?: ");
+                    System.out.print("Who/what is it from(vendor)?: ");
                     String userFrom = scanner.nextLine();
-                    System.out.print("How much is it?: ");
+                    System.out.print("How much is the amount?: ");
                     double userAmount = scanner.nextDouble();
                     scanner.nextLine();
                     TransactionApp deposit = new TransactionApp(LocalDate.now(), LocalTime.now(),userReason,userFrom,userAmount);
@@ -47,11 +47,11 @@ public class LedgerApp {
                     formatSpaces();
                     break;
                 case "P":
-                    System.out.print("What is the Payment for?: ");
+                    System.out.print("Give a brief description of what the Payment is for?: ");
                     String userR = scanner.nextLine();
-                    System.out.print("Who is it for?: ");
+                    System.out.print("Who is it for(vendor)?: ");
                     String userF = scanner.nextLine();
-                    System.out.print("How much was it?: ");
+                    System.out.print("How much was the amount?: ");
                     double userA = scanner.nextDouble();
                     scanner.nextLine();
                     TransactionApp payment = new TransactionApp(LocalDate.now(), LocalTime.now(),userR,userF,-userA);
