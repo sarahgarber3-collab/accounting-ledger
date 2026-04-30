@@ -66,7 +66,7 @@ public class LedgerApp {
                     scanner.close();
                     System.exit(0);
                 default:
-                    System.out.println("incorrect option entered");
+                    System.out.println("incorrect option entered, press enter to continue.");
                     scanner.nextLine();
                     formatSpaces();
 
@@ -124,6 +124,7 @@ public class LedgerApp {
                     break;
                 case "H":
                     run = false;
+                    formatSpaces();
                     break;
 
                 default:
