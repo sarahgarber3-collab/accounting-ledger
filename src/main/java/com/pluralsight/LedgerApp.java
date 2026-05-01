@@ -146,7 +146,7 @@ public class LedgerApp {
 
         boolean run = true;
         while (run) {
-            System.out.println("---REPORT SCREEN---");
+            System.out.println("----REPORT SCREEN----");
             System.out.println("Select from the following options: ");
             System.out.println("\t1) Month to Date");
             System.out.println("\t2) Previous Month");
