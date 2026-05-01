@@ -13,7 +13,7 @@ public class LedgerApp {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("\uD83D\uDCB0Welcome to The Cinema Accounting Ledger!\uD83D\uDCB0");
-        System.out.println("random movie quotes may appear.\uD83C\uDFA5\uD83C\uDF7F");
+        System.out.println("Random movie quotes may appear.\uD83C\uDFA5\uD83C\uDF7F");
         System.out.println("Guess where the quote came from to test your cinema knowledge\uD83C\uDFAC\uD83C\uDFC6");
         formatSpaces();
 
@@ -28,6 +28,7 @@ public class LedgerApp {
 
 
         while (true) {
+            System.out.println("---HOME SCREEN---");
             System.out.println("Select from the following options:");
             System.out.println("\tD) Add Deposit");
             System.out.println("\tP) Make A Payment(Debit)");
@@ -91,6 +92,7 @@ public class LedgerApp {
 
         boolean run = true;
         while (run) {
+            System.out.println("---LEDGER SCREEN---");
             System.out.println("Select from the following options: ");
             System.out.println("\tA) All-Display all entries");
             System.out.println("\tD) Deposits- Display only the entries that are deposits into the account.");
@@ -144,6 +146,7 @@ public class LedgerApp {
 
         boolean run = true;
         while (run) {
+            System.out.println("---REPORT SCREEN---");
             System.out.println("Select from the following options: ");
             System.out.println("\t1) Month to Date");
             System.out.println("\t2) Previous Month");
