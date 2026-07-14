@@ -1,5 +1,6 @@
 package com.pluralsight.service;
 
+import java.text.NumberFormat;
 import com.pluralsight.model.TransactionApp;
 import com.pluralsight.util.CommonUtils;
 
@@ -56,4 +57,23 @@ public class ReportFilter {
         }
         CommonUtils.formatSpaces();
     }
+    public static void summary(ArrayList<TransactionApp> transactions){
+        double totalIncome = 0;
+        double totalExpenses = 0;
+
+        for (TransactionApp t : transactions){
+            if(t.getAmount() > 0){
+                totalIncome += t.getAmount();
+            }else{
+                totalExpenses += t.getAmount();
+            }
+        }
+        NumberFormat money = NumberFormat.getCurrencyInstance();
+        System.out.println("======SUMMARY======");
+        System.out.println("Total Income:  " + money.format(totalIncome));
+        System.out.println("Total Expenses:  " + money.format(totalExpenses));
+        System.out.println("Net:  " + money.format(totalIncome + totalExpenses));
+        CommmonUtils.formatSpaces();
+    }
+    
 }
