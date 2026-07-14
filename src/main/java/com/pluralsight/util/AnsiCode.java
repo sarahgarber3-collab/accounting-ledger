@@ -126,6 +126,7 @@ public class AnsiCode {
         printMenuRow("3", GREEN, "Year to Date");
         printMenuRow("4", YELLOW, "Previous Year");
         printMenuRow("5", CYAN, "Search by Vendor");
+        printMenuRow("6", ORANGE, "Summary (Income/Expenses/Net)");
         printMenuRow("0", RED, "Back - go back to the ledger page");
         printBottom();
         printSelection();
