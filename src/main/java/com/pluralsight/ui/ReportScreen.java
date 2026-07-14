@@ -33,6 +33,7 @@ public class ReportScreen {
                     String vendor = Main.scanner.nextLine();
                     ReportFilter.searchByVendor(transaction, vendor);
                 }
+                case 6 -> ReportFilter.summary(transaction);    
                 case 0 -> running = false;
 
                 default ->{
