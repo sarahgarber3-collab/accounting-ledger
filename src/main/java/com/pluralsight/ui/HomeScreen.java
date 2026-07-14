@@ -1,7 +1,7 @@
 package com.pluralsight.ui;
 
 import com.pluralsight.Main;
-import com.pluralsight.delete.TransactionApp;
+import com.pluralsight.model.TransactionApp;
 import com.pluralsight.util.AnsiCode;
 import com.pluralsight.util.CommonUtils;
 import com.pluralsight.util.TransactionWriter;
@@ -16,10 +16,9 @@ public class HomeScreen {
         boolean running = true;
 
         while (running) {
-            AnsiCode.printHomeScreenHeader();
-            AnsiCode.printHomeScreenMenu();
 
-            //System.out.print("Enter selection: ");
+            AnsiCode.displayStartScreen();
+
             String userOption = Main.scanner.nextLine().toUpperCase();
 
             switch (userOption) {
@@ -34,7 +33,7 @@ public class HomeScreen {
                     Main.scanner.nextLine();
 
                     TransactionApp deposit = new TransactionApp(LocalDate.now(), LocalTime.now(), userReason, userFrom, userAmount);
-                    TransactionWriter.WriteTransaction(deposit);
+                    TransactionWriter.Writer(deposit);
 
                     CommonUtils.formatSpaces();
                     break;
@@ -48,7 +47,7 @@ public class HomeScreen {
                     double userA = Main.scanner.nextDouble();
                     Main.scanner.nextLine();
                     TransactionApp payment = new TransactionApp(LocalDate.now(), LocalTime.now(), userR, userF, -userA);
-                    TransactionWriter.WriteTransaction(payment);
+                    TransactionWriter.Writer(payment);
                     CommonUtils.formatSpaces();
                     break;
 

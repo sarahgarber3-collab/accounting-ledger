@@ -1,6 +1,6 @@
 package com.pluralsight.service;
 
-import com.pluralsight.delete.TransactionApp;
+import com.pluralsight.model.TransactionApp;
 import com.pluralsight.util.CommonUtils;
 
 import java.time.LocalDate;

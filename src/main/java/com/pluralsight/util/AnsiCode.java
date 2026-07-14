@@ -50,15 +50,43 @@ public class AnsiCode {
     }
 
 
-    // HomeScreen Header
-    public static void printHomeScreenHeader() {
-        printTop();
-        printRow(" \uD83D\uDCB0 Welcome to The Cinema Accounting Ledger! \uD83D\uDCB0", WHITE + BOLD, 2);
-        printMiddle();
-        printRow(" Random movie quotes may appear. \uD83C\uDFA5\uD83C\uDF7F", GRAY, 2);
-        printRow(" Guess where the quote came from to test your", GRAY, 0);
-        printRow(" cinema knowledge \uD83C\uDFAC\uD83C\uDFC6", GRAY, 2);
-        printBottom();
+    // New Code For Custom Starter Screen Added By Syd
+// New Code For Custom Starter Screen Added By Syd
+    public static void displayStartScreen() {
+        String red = "\u001B[31m";
+        String gold = "\u001B[33m";
+        String reset = "\u001B[0m";
+
+        try {
+            // Part 1: movie screen countdown
+            for (int i = 3; i >= 1; i--) {
+                System.out.println(gold + i + "..." + reset);
+                Thread.sleep(800);
+            }
+            System.out.println();
+
+            // Part 2: marquee design to look like a real movie title
+            System.out.println("  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐");
+            System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
+            System.out.println(red  + "|" + reset + "                                            " + gold + "|" + reset);
+            System.out.println(gold + "|" + reset + "        THE CINEMA ACCOUNTING LEDGER        " + red  + "|" + reset);
+            System.out.println(red  + "|" + reset + "                                            " + gold + "|" + reset);
+            System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
+            System.out.println(gold + "|" + reset + "   NOW SHOWING: Random movie quotes may     " + red  + "|" + reset);
+            System.out.println(red  + "|" + reset + "   appear! Guess where the quote came       " + gold + "|" + reset);
+            System.out.println(gold + "|" + reset + "   from to test your cinema knowledge       " + red  + "|" + reset);
+            System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
+            System.out.println("  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐");
+            System.out.println();
+
+            Thread.sleep(500);
+
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // Part 3: hand off to the boxed header for the details
+        printHomeScreenMenu();
     }
 
     //HomeScreen Menu

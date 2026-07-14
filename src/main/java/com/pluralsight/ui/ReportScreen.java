@@ -1,7 +1,7 @@
 package com.pluralsight.ui;
 
 import com.pluralsight.Main;
-import com.pluralsight.delete.TransactionApp;
+import com.pluralsight.model.TransactionApp;
 import com.pluralsight.service.ReportFilter;
 import com.pluralsight.util.AnsiCode;
 

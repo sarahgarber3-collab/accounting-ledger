@@ -1,7 +1,7 @@
 package com.pluralsight.ui;
 
 import com.pluralsight.Main;
-import com.pluralsight.delete.TransactionApp;
+import com.pluralsight.model.TransactionApp;
 import com.pluralsight.model.Transaction;
 import com.pluralsight.util.AnsiCode;
 import com.pluralsight.util.CommonUtils;
@@ -26,7 +26,7 @@ public class LedgerScreen {
                 case "D" -> LedgerChoice.ledgerChoice(transaction, "deposits");
                 case "P" -> LedgerChoice.ledgerChoice(transaction, "payments");
                 case "R" -> ReportScreen.display(transaction);
-                case "X" -> running = false;
+                case "H" -> running = false;
 
                 default -> {
                     AnsiCode.exitLedgerScreen();
