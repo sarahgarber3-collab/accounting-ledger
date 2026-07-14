@@ -18,4 +18,19 @@ public class LedgerChoice {
         }
         CommonUtils.formatSpaces();
     }
+    private static void printRunningBalance(ArrayList<TransactionApp> transactions){
+        double runningBalance = 0;
+        NumberFormat money = NumberFormat.getCurrencyInstance();
+
+        double[] balances = new double[transactions.size()];
+        for(int i = transactions.size() - 1; i >= 0; i--){
+            runningBalance += transactions.get(i).getAmount();
+            balance[i] = runningBalance;
+        }
+
+        for(int i = 0; i < transactions.size(); i++){
+            System.out.printf("Balance: %s  ", money.format(balances[i]));
+            transactions.get(i).printTransaction();
+        }
+    }
 }
