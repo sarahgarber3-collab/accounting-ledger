@@ -75,5 +75,40 @@ public class ReportFilter {
         System.out.println("Net:  " + money.format(totalIncome + totalExpenses));
         CommonUtils.formatSpaces();
     }
-    
+
+    public static void customSearch(ArrayList<TransactionApp> transactions, String startDateInput, String endDateInput,
+                                    String descriptionInput, String vendorInput, String amountInput) {
+
+        LocalDate startDate = null;
+        if (!startDateInput.isBlank()) {
+            startDate = LocalDate.parse(startDateInput);
+        }
+
+        LocalDate endDate = null;
+        if (!endDateInput.isBlank()) {
+            endDate = LocalDate.parse(endDateInput);
+        }
+
+        Double amount = null;
+        if (!amountInput.isBlank()) {
+            amount = Double.parseDouble(amountInput);
+        }
+
+        for (TransactionApp t : transactions) {
+            boolean match = (startDate == null || !t.getDate().isBefore(startDate))
+                    && (endDate == null || !t.getDate().isAfter(endDate))
+                    && (descriptionInput.isBlank() || t.getDescription().toLowerCase().contains(descriptionInput.toLowerCase()))
+                    && (vendorInput.isBlank() || t.getVendor().equalsIgnoreCase(vendorInput))
+                    && (amount == null || t.getAmount() == amount);
+
+            if (match) {
+                t.printTransaction();
+            }
+        }
+
+        CommonUtils.formatSpaces();
+    }
+
 }
+    
+
