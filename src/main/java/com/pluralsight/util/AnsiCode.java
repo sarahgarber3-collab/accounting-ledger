@@ -74,7 +74,7 @@ public class AnsiCode {
             System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
             System.out.println(gold + "|" + reset + "   NOW SHOWING: Random movie quotes may     " + red  + "|" + reset);
             System.out.println(red  + "|" + reset + "   appear! Guess where the quote came       " + gold + "|" + reset);
-            System.out.println(gold + "|" + reset + "   from to test your cinema knowledge       " + red  + "|" + reset);
+            System.out.println(gold + "|" + reset + "   from to test your cinema knowledge!       " + red  + "|" + reset);
             System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
             System.out.println("  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐");
             System.out.println();
