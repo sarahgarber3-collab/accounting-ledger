@@ -68,16 +68,17 @@ public class AnsiCode {
             System.out.println();
 
             // Part 2: marquee design to look like a real movie title
+            // Phase 3: Marquee
             System.out.println("  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐");
-            System.out.println("🔴\uD83D\uDCA1🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
+            System.out.println(" 🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡");
             System.out.println(red  + "|" + reset + "                                            " + gold + "|" + reset);
             System.out.println(gold + "|" + reset + "        THE CINEMA ACCOUNTING LEDGER        " + red  + "|" + reset);
             System.out.println(red  + "|" + reset + "                                            " + gold + "|" + reset);
-            System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
+            System.out.println(" 🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡");
             System.out.println(gold + "|" + reset + "   NOW SHOWING: Random movie quotes may     " + red  + "|" + reset);
             System.out.println(red  + "|" + reset + "   appear! Guess where the quote came       " + gold + "|" + reset);
-            System.out.println(gold + "|" + reset + "   from to test your cinema knowledge!       " + red  + "|" + reset);
-            System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
+            System.out.println(gold + "|" + reset + "   from to test your cinema knowledge       " + red  + "|" + reset);
+            System.out.println(" 🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡");
             System.out.println("  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐");
             System.out.println();
 
