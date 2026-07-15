@@ -77,7 +77,7 @@ public class AnsiCode {
             System.out.println(" 🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡");
             System.out.println(gold + "|" + reset + "   NOW SHOWING: Random movie quotes may     " + red  + "|" + reset);
             System.out.println(red  + "|" + reset + "   appear! Guess where the quote came       " + gold + "|" + reset);
-            System.out.println(gold + "|" + reset + "   from to test your cinema knowledge       " + red  + "|" + reset);
+            System.out.println(gold + "|" + reset + "   from to test your cinema knowledge!       " + red  + "|" + reset);
             System.out.println(" 🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡🔴💡");
             System.out.println("  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐");
             System.out.println();
@@ -95,7 +95,7 @@ public class AnsiCode {
     //HomeScreen Menu
     public static void printHomeScreenMenu() {
         printTop();
-        printRow(" ---HOME SCREEN---", SILVER + BOLD, 0);
+        printRow(" ---HOME SCREEN--------------------------------ACTION!", SILVER + BOLD, 0);
         printMiddle();
         printMenuRow("D", YELLOW + BOLD, "Add Deposit");
         printMenuRow("P", YELLOW + BOLD, "Make A Payment (Debit)");
@@ -108,7 +108,7 @@ public class AnsiCode {
     // LedgerScreen Menu
     public static void printLedgerScreenMenu() {
         printTop();
-        printRow(" ---LEDGER SCREEN---", SILVER + BOLD, 0);
+        printRow(" ---LEDGER SCREEN------------------------------ACTION!", SILVER + BOLD, 0);
         printMiddle();
         printMenuRow("A", YELLOW + BOLD, "All - Display all entries");
         printMenuRow("D", YELLOW + BOLD, "Deposits - only deposit entries");
@@ -122,7 +122,7 @@ public class AnsiCode {
     // ReportScreen Menu
     public static void printReportScreenMenu() {
         printTop();
-        printRow(" ---REPORT SCREEN---", SILVER + BOLD, 0);
+        printRow(" ---REPORT SCREEN------------------------------ACTION!", SILVER + BOLD, 0);
         printMiddle();
         printMenuRow("1", YELLOW + BOLD, "Month to Date");
         printMenuRow("2", YELLOW + BOLD, "Previous Month");
