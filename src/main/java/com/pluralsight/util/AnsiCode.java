@@ -1,5 +1,7 @@
 package com.pluralsight.util;
 
+import com.pluralsight.service.MovieQuotes;
+
 public class AnsiCode {
     // ANSI COLORS
     public static final String RESET = "\u001B[0m";
@@ -67,7 +69,7 @@ public class AnsiCode {
 
             // Part 2: marquee design to look like a real movie title
             System.out.println("  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐  🌟  ⭐");
-            System.out.println("🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
+            System.out.println("🔴\uD83D\uDCA1🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡🔴🟡");
             System.out.println(red  + "|" + reset + "                                            " + gold + "|" + reset);
             System.out.println(gold + "|" + reset + "        THE CINEMA ACCOUNTING LEDGER        " + red  + "|" + reset);
             System.out.println(red  + "|" + reset + "                                            " + gold + "|" + reset);
@@ -94,10 +96,10 @@ public class AnsiCode {
         printTop();
         printRow(" ---HOME SCREEN---", SILVER + BOLD, 0);
         printMiddle();
-        printMenuRow("D", GREEN, "Add Deposit");
-        printMenuRow("P", YELLOW, "Make A Payment (Debit)");
-        printMenuRow("L", CYAN, "Ledger");
-        printMenuRow("X", RED, "Exit The Application");
+        printMenuRow("D", YELLOW + BOLD, "Add Deposit");
+        printMenuRow("P", YELLOW + BOLD, "Make A Payment (Debit)");
+        printMenuRow("L", YELLOW + BOLD, "Ledger");
+        printMenuRow("X", YELLOW + BOLD, "Exit The Application");
         printBottom();
         printSelection();
     }
@@ -107,11 +109,11 @@ public class AnsiCode {
         printTop();
         printRow(" ---LEDGER SCREEN---", SILVER + BOLD, 0);
         printMiddle();
-        printMenuRow("A", ICE, "All - Display all entries");
-        printMenuRow("D", GREEN, "Deposits - only deposit entries");
-        printMenuRow("P", YELLOW, "Payments - only payment entries");
-        printMenuRow("R", CYAN, "Reports");
-        printMenuRow("H", RED, "Home - go back to the home page");
+        printMenuRow("A", YELLOW + BOLD, "All - Display all entries");
+        printMenuRow("D", YELLOW + BOLD, "Deposits - only deposit entries");
+        printMenuRow("P", YELLOW + BOLD, "Payments - only payment entries");
+        printMenuRow("R", YELLOW + BOLD, "Reports");
+        printMenuRow("H", YELLOW + BOLD, "Home - go back to the home page");
         printBottom();
         printSelection();
     }
@@ -121,34 +123,29 @@ public class AnsiCode {
         printTop();
         printRow(" ---REPORT SCREEN---", SILVER + BOLD, 0);
         printMiddle();
-        printMenuRow("1", MAGENTA, "Month to Date");
-        printMenuRow("2", ICE, "Previous Month");
-        printMenuRow("3", GREEN, "Year to Date");
-        printMenuRow("4", YELLOW, "Previous Year");
-        printMenuRow("5", CYAN, "Search by Vendor");
-        printMenuRow("6", MAGENTA, "Summary (Income/Expenses/Net)");
-        printMenuRow("0", RED, "Back - go back to the ledger page");
+        printMenuRow("1", YELLOW + BOLD, "Month to Date");
+        printMenuRow("2", YELLOW + BOLD, "Previous Month");
+        printMenuRow("3", YELLOW + BOLD, "Year to Date");
+        printMenuRow("4", YELLOW + BOLD, "Previous Year");
+        printMenuRow("5", YELLOW + BOLD, "Search by Vendor");
+        printMenuRow("6", YELLOW + BOLD, "Summary (Income/Expenses/Net)");
+        printMenuRow("7", YELLOW + BOLD, "Custom Search");
+        printMenuRow("0", YELLOW + BOLD, "Back - go back to the ledger page");
         printBottom();
         printSelection();
     }
 
     // GoodByes
     public static void exitHome(){
-        System.out.println(MAGENTA + BOLD + "Thanks for using The Cinema Accounting Ledger, Have a nice day!"+ RESET);
-        System.out.println("May the force be with you.\uD83D\uDEF8\uD83C\uDF20");
-    }
-
-    public static void exitLedgerScreen() {
-        System.out.println("Toto, I've a feeling we're not in Kansan anymore.\uD83D\uDC36\uD83D\uDC60\uD83C\uDF2A\uFE0F press enter to try again.");
-    }
-    public static void exitReportScreen() {
-        System.out.println("You can't sit with us.\uD83D\uDC85\uD83D\uDC6F press enter to try again.");
+        System.out.println(YELLOW + BOLD + "Thanks for using The Cinema Accounting Ledger, Have a nice day!"+ RESET);
+        System.out.println(RED + BOLD + MovieQuotes.getRandomExitQuote());
     }
 
     // Invalids
     public static void printInvalid(){
-        System.out.printf(MAGENTA +  "%-44s%n" + RESET,"Houston, we have a problem. \n press enter to try again.");
+        System.out.printf(YELLOW + BOLD +  "%-44s%n" + RESET, MovieQuotes.getRandomErrorQuote() + "press enter to try again.");
     }
+
 
     public static void printSelection(){
         System.out.print(GRAY + BOLD + "Enter Selection: " + RESET + WHITE);

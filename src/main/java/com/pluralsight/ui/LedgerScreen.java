@@ -28,8 +28,9 @@ public class LedgerScreen {
                 case "R" -> ReportScreen.display(transaction);
                 case "H" -> running = false;
 
+
                 default -> {
-                    AnsiCode.exitLedgerScreen();
+                    AnsiCode.printInvalid();
                     Main.scanner.nextLine();
                     CommonUtils.formatSpaces();
                 }
