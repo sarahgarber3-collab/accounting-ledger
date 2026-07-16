@@ -1,7 +1,8 @@
 About this Project:
-This is an accounting ledger application that allows users to keep track of deposits and payments they have made or recieved. 
-The Homescreen is where you can add a deposit or make a payment, you can also exit the application or access the ledger screen.
-This application also lets you view these files by utilizing the ledger and report screen. 
-You have the option to view all transactions on the ledger screen, and the report screen has more specific viewing options
+
+Everyone needs to deal with money; it can be easy to get lost in keeping track of deposits, payments, and regular bills. The Accounting Ledger Application (ALA) was developed to help people manage their personal finances in an organized, efficient, and easy-to-use manner. Users can easily add deposits, record payments, access financial ledger, generate detailed reports, or safely exit application from the Home Screen. All transactions are safely recorded, and users can have a complete and well-organized financial record, which they can access at any time.
+ 
+The application features a full-featured Ledger, which shows all transactions, and a Reports menu, which enables users to view Month-to-Date, Previous Month, Year-to-Date, and Previous Year transactions, search by vendor, or search by custom date range, to quickly find specific transactions. A Financial Summary is a quick and easy way to see the activity of an account and to get a better understanding of how much money has been spent and how much has been earned. The app also has input validation and error handling to make the experience smooth and a fun twist with hidden movie quotes that pop up when users enter the wrong input or when they close the app, providing them with an entertaining challenge to guess the movie. Overall, this project illustrates the power of software to create organized, searchable, and meaningful records out of everyday financial information, with thoughtful design and an intuitive user experience.
+
 If you should accidentally type something that the code cannot understand, it will default you to an iconic movie quote. The game is to guess what movie it came from.
 A movie quote will also show up when you exit the program all together. If you can guess them all, that means you are quite the movie buff.
